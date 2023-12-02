@@ -23,5 +23,5 @@ kotlin {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("dev.calathea.aoc2023.MainKt")
 }
