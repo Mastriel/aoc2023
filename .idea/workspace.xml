@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/FileUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/FileUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Challenge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Challenge.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/day1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day1_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/day1_test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +32,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="ljbqqh4a" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2YxSMkG06V4uOJX4PUbGkbCz4xM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,6 +51,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,7 +65,14 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.MainKt (1)">
+    <configuration name="MainKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.calathea.aoc2023.MainKt" />
+      <module name="AOC2023.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="AOC2023.main" />
@@ -74,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.MainKt (1)" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
@@ -87,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701465699154</updated>
       <workItem from="1701465700290" duration="7957000" />
+      <workItem from="1701477523485" duration="2902000" />
     </task>
     <servers />
   </component>

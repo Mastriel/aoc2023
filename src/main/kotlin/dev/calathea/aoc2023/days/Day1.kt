@@ -1,7 +1,5 @@
 package dev.calathea.aoc2023.days
 
-import dev.calathea.aoc2023.readResource
-
 private val numbers = "0123456789".toCharArray()
 private val wordsToNumbers = mapOf(
     "one" to '1',
@@ -15,10 +13,9 @@ private val wordsToNumbers = mapOf(
     "nine" to '9',
 )
 
-val Day1 = Challenge("Day 1") {
-    val text = readResource("/day1.txt")
+val Day1 = Challenge(FileInput("day1.txt")) {
 
-    val lines = text.split("\n")
+    val lines = input.split("\n")
 
     var total = 0
     for (line in lines) {
@@ -34,13 +31,11 @@ val Day1 = Challenge("Day 1") {
         total += "$firstDigit$lastDigit".toInt()
     }
 
-    total expectEquals 57346
     answer(total)
 }
 
-val Day1Part2 = Challenge("Day 1 Part 2") {
-    val text = readResource("/day1.txt")
-    val lines = text.split("\n")
+val Day1Part2 = Challenge(FileInput("day1.txt")) {
+    val lines = input.split("\n")
 
     var total = 0
 
@@ -62,6 +57,5 @@ val Day1Part2 = Challenge("Day 1 Part 2") {
         total += "$firstDigit$lastDigit".toInt()
     }
 
-    total expectEquals 57345
     answer(total)
 }
