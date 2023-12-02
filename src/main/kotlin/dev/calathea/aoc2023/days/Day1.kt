@@ -23,7 +23,7 @@ val Day1 = Challenge(FileInput("day1.txt")) {
         var lastDigit: Char? = null
         for (char in line) {
             if (char in numbers) {
-                if (firstDigit == null) firstDigit = char
+                if (firstDigit == null)  firstDigit = char
                 lastDigit = char
             }
         }

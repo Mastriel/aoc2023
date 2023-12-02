@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="Make challenges as pretty as possible">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day2.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Challenge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Challenge.kt" afterDir="false" />
@@ -96,11 +96,24 @@
       <option name="presentableId" value="Default" />
       <updated>1701465699154</updated>
       <workItem from="1701465700290" duration="7957000" />
-      <workItem from="1701477523485" duration="2902000" />
+      <workItem from="1701477523485" duration="9518000" />
     </task>
+    <task id="LOCAL-00001" summary="Make challenges as pretty as possible">
+      <option name="closed" value="true" />
+      <created>1701480437700</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701480437700</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Make challenges as pretty as possible" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make challenges as pretty as possible" />
   </component>
 </project>

@@ -32,9 +32,14 @@ class FileInput(fileName: String) : ChallengeContext() {
 }
 
 class ChallengeModifier<T: ChallengeContext>(
-    var expectAnswer : Any? = null,
+    expectAnswer : Any? = null,
     var context : T? = null
-)
+) {
+    var expectAnswer = expectAnswer
+        private set
+
+    fun expectAnswer(value: Any?) { expectAnswer = value }
+}
 
 
 data class Challenge<T: ChallengeContext>(private var context: T, private val invoke: T.() -> Unit) {
@@ -49,6 +54,7 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
             expectAnswer,
             context
         ).apply(block)
+
         return this.copy().apply {
             this.expectAnswer = modifier.expectAnswer
             this.name = name
@@ -66,7 +72,7 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
         } catch (e: ChallengeAnswerException) {
             val timePassed = timer.elapsedNow()
 
-            if (expectAnswer != e.answer) {
+            if (expectAnswer != null && expectAnswer != e.answer) {
                 System.err.println("Failed to find solution for '${name}' in $timePassed: expected ${expectAnswer}, got ${e.answer}")
                 return
             }
