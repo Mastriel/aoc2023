@@ -1,7 +1,5 @@
 package dev.calathea.aoc2023.days
 
-import kotlin.math.max
-
 
 private val maxes = mapOf(
     "red" to 12,
@@ -39,22 +37,23 @@ val Day2 = Challenge(FileInput("day2.txt")) {
 val Day2Part2 = Challenge(FileInput("day2.txt")) {
     val lines = input.split("\n")
     var total = 0
-    for ((i, line) in lines.withIndex()) {
+    for ((_, line) in lines.withIndex()) {
         val data = line.split(": ")[1]
-        val roundData = data.split("; ", ", ")
+        val gameData = data.split("; ", ", ")
         val map = mutableMapOf<String, Int>()
-        for (round in roundData) {
-            val (amount, color) = round.split(" ")
+        for (cubes in gameData) {
+            val (amount, color) = cubes.split(" ")
             if (amount.toInt() > (map[color.trim()] ?: 0)) {
                 map[color.trim()] = amount.toInt()
             }
         }
         if (map.values.isNotEmpty()) {
             val gameTotal = map.values.reduce { acc, it -> acc * it }
-            println("Game ${i}: $gameTotal")
             total += gameTotal
         }
     }
+
+    debugPrintln("Hooray!")
 
     answer(total)
 }

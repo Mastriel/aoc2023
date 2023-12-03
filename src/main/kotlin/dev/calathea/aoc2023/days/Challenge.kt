@@ -9,6 +9,12 @@ class ChallengeFailureException(val reason: String, causedBy: Throwable?) : Exce
 
 
 open class ChallengeContext {
+
+    lateinit var challenge : Challenge<*>
+        private set
+
+    fun injectChallenge(challenge: Challenge<*>) { this.challenge = challenge }
+
     fun answer(answer: Any) : Nothing {
         throw ChallengeAnswerException(answer)
     }
@@ -25,6 +31,10 @@ open class ChallengeContext {
         expect(this == other) { "expected $other, got $this" }
         return null
     }
+
+    fun debugPrintln(obj: Any?) {
+        if (challenge.enableDebug) println(obj)
+    }
 }
 
 class FileInput(fileName: String) : ChallengeContext() {
@@ -33,7 +43,8 @@ class FileInput(fileName: String) : ChallengeContext() {
 
 class ChallengeModifier<T: ChallengeContext>(
     expectAnswer : Any? = null,
-    var context : T? = null
+    var context : T? = null,
+    var enableDebug : Boolean = false
 ) {
     var expectAnswer = expectAnswer
         private set
@@ -45,6 +56,8 @@ class ChallengeModifier<T: ChallengeContext>(
 data class Challenge<T: ChallengeContext>(private var context: T, private val invoke: T.() -> Unit) {
     private var expectAnswer: Any? = null
     private var name: String? = null
+    var enableDebug: Boolean = false
+        private set
 
     /**
      * Configure and execute a challenge.
@@ -52,13 +65,15 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
     operator fun invoke(name: String, block: ChallengeModifier<T>.() -> Unit = {}) : Challenge<T> {
         val modifier = ChallengeModifier(
             expectAnswer,
-            context
+            context,
+            enableDebug
         ).apply(block)
 
         return this.copy().apply {
             this.expectAnswer = modifier.expectAnswer
             this.name = name
             if (modifier.context != null) this.context = modifier.context!!
+            this.enableDebug = modifier.enableDebug
         }.also { it.execute() }
     }
 
@@ -66,6 +81,7 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
         val timer = TimeSource.Monotonic.markNow()
         val name = name ?: "Unnamed Challenge"
         try {
+            context.injectChallenge(this)
             invoke(context)
             val timePassed = timer.elapsedNow()
             System.err.println("Found no solution for '${name}' in $timePassed")
@@ -88,4 +104,5 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
         }
 
     }
+
 }
