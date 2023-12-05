@@ -32,4 +32,19 @@ fun main(args: Array<String>) {
     Day3Part2("Day 3: Part 2") {
         expectAnswer(79842967)
     }
+
+
+    Day4("Day 4: Part 1") {
+        expectAnswer(26443)
+    }
+
+    Day4Part2("Day 4: Part 2") {
+        expectAnswer(6284877)
+    }
+
+    Day4Part2("Day 4: Part 2: Test") {
+        // enableDebug = true
+        expectAnswer(30)
+        context = FileInput("day4_test.txt")
+    }
 }

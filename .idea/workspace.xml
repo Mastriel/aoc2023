@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="Day 2 completed">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day3.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day3.txt" afterDir="false" />
+    <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="Day 4 completed. I don't know how">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day4.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day4_test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Challenge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Challenge.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day2.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -45,23 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023" />
@@ -99,7 +98,8 @@
       <updated>1701465699154</updated>
       <workItem from="1701465700290" duration="7957000" />
       <workItem from="1701477523485" duration="12533000" />
-      <workItem from="1701575418639" duration="8604000" />
+      <workItem from="1701575418639" duration="9233000" />
+      <workItem from="1701665251334" duration="5276000" />
     </task>
     <task id="LOCAL-00001" summary="Make challenges as pretty as possible">
       <option name="closed" value="true" />
@@ -117,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701496019781</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Day 3 completed">
+      <option name="closed" value="true" />
+      <created>1701626639586</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701626639586</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +134,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Make challenges as pretty as possible" />
     <MESSAGE value="Day 2 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 2 completed" />
+    <MESSAGE value="Day 3 completed" />
+    <MESSAGE value="Day 4 completed. I don't know how" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 4 completed. I don't know how" />
   </component>
 </project>
