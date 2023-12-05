@@ -47,4 +47,27 @@ fun main(args: Array<String>) {
         expectAnswer(30)
         context = FileInput("day4_test.txt")
     }
+
+    Day5("Day 5") {
+        expectAnswer(226172555L)
+    }
+
+    Day5("Day 5: Test") {
+        context = FileInput("day5_test.txt")
+        expectAnswer(35L)
+
+    }
+
+    Day5Part2("Day 5: Part 2: Test") {
+        context = FileInput("day5_test.txt")
+        expectAnswer(46L)
+    }
+
+
+    Day5Part2("Day 5: Part 2") {
+        skip = true // entirely brute forced. took 8 minutes to run on an i7-10750H
+        expectAnswer(47909639)
+    }
+
+
 }

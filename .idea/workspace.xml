@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="Day 4 completed. I don't know how">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day4.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day4_test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day5.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/utils/Grid.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day5_test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Challenge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Challenge.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -99,7 +114,7 @@
       <workItem from="1701465700290" duration="7957000" />
       <workItem from="1701477523485" duration="12533000" />
       <workItem from="1701575418639" duration="9233000" />
-      <workItem from="1701665251334" duration="5276000" />
+      <workItem from="1701665251334" duration="13682000" />
     </task>
     <task id="LOCAL-00001" summary="Make challenges as pretty as possible">
       <option name="closed" value="true" />
@@ -125,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701626639586</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Day 4 completed. I don't know how">
+      <option name="closed" value="true" />
+      <created>1701747336948</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701747336949</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

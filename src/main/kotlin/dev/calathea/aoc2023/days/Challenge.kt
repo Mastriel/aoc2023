@@ -44,7 +44,8 @@ class FileInput(fileName: String) : ChallengeContext() {
 class ChallengeModifier<T: ChallengeContext>(
     expectAnswer : Any? = null,
     var context : T? = null,
-    var enableDebug : Boolean = false
+    var enableDebug : Boolean = false,
+    var skip : Boolean = false
 ) {
     var expectAnswer = expectAnswer
         private set
@@ -59,6 +60,9 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
     var enableDebug: Boolean = false
         private set
 
+    var skip: Boolean = false
+        private set
+
     /**
      * Configure and execute a challenge.
      */
@@ -66,7 +70,8 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
         val modifier = ChallengeModifier(
             expectAnswer,
             context,
-            enableDebug
+            enableDebug,
+            skip
         ).apply(block)
 
         return this.copy().apply {
@@ -74,10 +79,15 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
             this.name = name
             if (modifier.context != null) this.context = modifier.context!!
             this.enableDebug = modifier.enableDebug
+            this.skip = modifier.skip
         }.also { it.execute() }
     }
 
     fun execute() {
+        if (skip) {
+            System.err.println("Skipping '${name}'...")
+            return
+        }
         val timer = TimeSource.Monotonic.markNow()
         val name = name ?: "Unnamed Challenge"
         try {
