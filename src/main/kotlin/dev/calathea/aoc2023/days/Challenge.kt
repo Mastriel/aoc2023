@@ -35,10 +35,20 @@ open class ChallengeContext {
     fun debugPrintln(obj: Any?) {
         if (challenge.enableDebug) println(obj)
     }
+
+    open fun validate() {}
 }
 
-class FileInput(fileName: String) : ChallengeContext() {
-    val input = readResource("/$fileName")
+class FileInput(private val fileName: String) : ChallengeContext() {
+    val input by lazy { readResource("/$fileName") }
+
+    override fun validate() {
+        try {
+            input
+        } catch (ex: Exception) {
+            fail("Could not read the file '${fileName}'")
+        }
+    }
 }
 
 class ChallengeModifier<T: ChallengeContext>(
@@ -92,6 +102,7 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
         val name = name ?: "Unnamed Challenge"
         try {
             context.injectChallenge(this)
+            context.validate()
             invoke(context)
             val timePassed = timer.elapsedNow()
             System.err.println("Found no solution for '${name}' in $timePassed")
