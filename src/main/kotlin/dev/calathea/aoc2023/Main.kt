@@ -25,7 +25,6 @@ fun main(args: Array<String>) {
 
 
     Day3("Day 3: Part 1") {
-        // enableDebug = true
         expectAnswer(532445)
     }
 
@@ -38,35 +37,75 @@ fun main(args: Array<String>) {
         expectAnswer(26443)
     }
 
-    Day4Part2("Day 4: Part 2") {
-        expectAnswer(6284877)
-    }
-
     Day4Part2("Day 4: Part 2: Test") {
-        // enableDebug = true
         expectAnswer(30)
         context = FileInput("day4_test.txt")
     }
 
-    Day5("Day 5") {
-        expectAnswer(226172555L)
+    Day4Part2("Day 4: Part 2") {
+        expectAnswer(6284877)
     }
 
-    Day5("Day 5: Test") {
+
+    Day5("Day 5: Part 1: Test") {
         context = FileInput("day5_test.txt")
         expectAnswer(35L)
 
     }
+
+    Day5("Day 5: Part 1") {
+        expectAnswer(226172555L)
+    }
+
 
     Day5Part2("Day 5: Part 2: Test") {
         context = FileInput("day5_test.txt")
         expectAnswer(46L)
     }
 
-
     Day5Part2("Day 5: Part 2") {
         skip = true // entirely brute forced. took 8 minutes to run on an i7-10750H
         expectAnswer(47909639)
+    }
+
+
+    Day6("Day 6: Part 1: Test") {
+        enableDebug = true
+        context = FileInput("day6_test.txt")
+        expectAnswer(288)
+    }
+
+    Day6("Day 6: Part 1") {
+        expectAnswer(316800)
+    }
+
+
+    Day6Part2("Day 6: Part 2: Test") {
+        context = FileInput("day6_test.txt")
+        expectAnswer(71503L)
+    }
+
+    Day6Part2("Day 6: Part 2") {
+        expectAnswer(45647654L)
+    }
+
+    Day7("Day 7: Part 1: Test") {
+        context = FileInput("day7_test.txt")
+        expectAnswer(6440)
+    }
+
+    Day7("Day 7: Part 1") {
+    }
+
+
+    Day7Part2("Day 7: Part 2: Test") {
+        enableDebug = true
+        context = FileInput("day7_test.txt")
+        expectAnswer(5905)
+    }
+
+    Day7Part2("Day 7: Part 2") {
+        enableDebug = true
     }
 
 

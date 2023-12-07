@@ -89,8 +89,8 @@ val Day5Part2 = Challenge(FileInput("day5.txt")) {
 
     var lowestNumber = Long.MAX_VALUE
 
-    val pairs = rawSeedNumbers.chunked(2)
-    for ((index, pair) in pairs.withIndex()) {
+    val seedPairs = rawSeedNumbers.chunked(2)
+    for ((index, pair) in seedPairs.withIndex()) {
         val (start, range) = pair
         repeat(range.toInt()) { i ->
             var number = start + i
@@ -100,9 +100,6 @@ val Day5Part2 = Challenge(FileInput("day5.txt")) {
             if (number < lowestNumber) lowestNumber = number
         }
     }
-
-
-    debugPrintln(maps)
 
     answer(lowestNumber)
 }
