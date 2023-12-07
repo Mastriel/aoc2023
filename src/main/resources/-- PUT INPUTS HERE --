@@ -1,0 +1,5 @@
+Each day should have dayN.txt and dayN_test.txt
+  dayN.txt is the actual input
+  dayN_test.txt is the example input
+
+Examples: day1.txt and day1_test.txt, day16.txt and day16_test.txt

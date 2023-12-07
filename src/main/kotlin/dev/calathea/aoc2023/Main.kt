@@ -95,17 +95,17 @@ fun main(args: Array<String>) {
     }
 
     Day7("Day 7: Part 1") {
+        expectAnswer(253910319)
     }
 
 
     Day7Part2("Day 7: Part 2: Test") {
-        enableDebug = true
         context = FileInput("day7_test.txt")
         expectAnswer(5905)
     }
 
     Day7Part2("Day 7: Part 2") {
-        enableDebug = true
+        expectAnswer(254083736)
     }
 
 
