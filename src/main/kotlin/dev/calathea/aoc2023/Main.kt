@@ -108,5 +108,25 @@ fun main(args: Array<String>) {
         expectAnswer(254083736)
     }
 
+    Day8("Day 8: Part 1: Test") {
+        context = FileInput("day8_test.txt")
+        expectAnswer(6)
+    }
+
+    Day8("Day 8: Part 1") {
+        expectAnswer(14257)
+    }
+
+
+    Day8Part2("Day 8: Part 2: Test") {
+        enableDebug = true
+        context = FileInput("day8_test2.txt")
+        expectAnswer(6L)
+    }
+
+    Day8Part2("Day 8: Part 2") {
+        expectAnswer(16187743689077L)
+    }
+
 
 }
