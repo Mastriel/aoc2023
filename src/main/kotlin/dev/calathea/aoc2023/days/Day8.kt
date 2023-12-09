@@ -28,16 +28,13 @@ val Day8 = Challenge(FileInput("day8.txt")) {
     var currentNode: Node = firstNode
     var total = 0
 
-    a@ for (item in generateSequence { rawDirections.toList() }) {
-        for (instruction in item) {
-
-            when (instruction) {
-                'R' -> currentNode = nodes[currentNode.right]!!
-                'L' -> currentNode = nodes[currentNode.left]!!
-            }
-            total += 1
-            if (currentNode.key == lastNode.key) break@a
+    a@ for (instruction in generateSequence { rawDirections.toList() }.flatten()) {
+        when (instruction) {
+            'R' -> currentNode = nodes[currentNode.right]!!
+            'L' -> currentNode = nodes[currentNode.left]!!
         }
+        total += 1
+        if (currentNode.key == lastNode.key) break@a
     }
     answer(total)
 }
@@ -67,23 +64,20 @@ val Day8Part2 = Challenge(FileInput("day8.txt")) {
     for (node in firstNodes) {
         var distance = 0
         var activeNode = node
-        a@for (item in generateSequence { rawDirections.toList() }) {
-            for (instruction in item) {
-                val newNode = when (instruction) {
-                    'L' -> nodes[activeNode.left]
-                    'R' -> nodes[activeNode.right]
-                    else -> null
-                }!!
+        a@for (item in generateSequence { rawDirections.toList() }.flatten()) {
+            val newNode = when (item) {
+                'L' -> nodes[activeNode.left]
+                'R' -> nodes[activeNode.right]
+                else -> null
+            }!!
 
-                if (activeNode.key.endsWith('Z')) {
-                    lcms += distance.toLong()
-                    break@a
-                }
-                distance += 1
-
-                activeNode = newNode
-
+            if (activeNode.key.endsWith('Z')) {
+                lcms += distance.toLong()
+                break@a
             }
+            distance += 1
+
+            activeNode = newNode
         }
     }
     answer(lcms.lcm())
