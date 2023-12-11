@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="Day 8 + 9">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day9.kt" afterDir="false" />
+    <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="Days 10 + 11">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day10.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day11.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day8.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day8.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/utils/Grid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/utils/Grid.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -82,24 +87,37 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt (1)">
-    <configuration name="MainKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.calathea.aoc2023.MainKt" />
       <module name="AOC2023.main" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-Xss10M" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <option name="MAIN_CLASS_NAME" value="dev.calathea.aoc2023.MainKt" />
       <module name="AOC2023.main" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-Xss100M" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="dev.calathea.aoc2023.MainKt" />
+      <module name="AOC2023.main" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-Xss10M" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt (1)" />
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
@@ -117,6 +135,10 @@
       <workItem from="1701575418639" duration="9233000" />
       <workItem from="1701665251334" duration="19854000" />
       <workItem from="1701921872129" duration="7552000" />
+      <workItem from="1702183663017" duration="14347000" />
+      <workItem from="1702230482200" duration="14000" />
+      <workItem from="1702230506781" duration="6553000" />
+      <workItem from="1702252038072" duration="11486000" />
     </task>
     <task id="LOCAL-00001" summary="Make challenges as pretty as possible">
       <option name="closed" value="true" />
@@ -182,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702016376215</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Day 8 + 9">
+      <option name="closed" value="true" />
+      <created>1702100266444</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1702100266444</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +229,7 @@
     <MESSAGE value="Remove challenge inputs because you shouldn't have those apparently" />
     <MESSAGE value="Day 8" />
     <MESSAGE value="Day 8 + 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 8 + 9" />
+    <MESSAGE value="Days 10 + 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="Days 10 + 11" />
   </component>
 </project>

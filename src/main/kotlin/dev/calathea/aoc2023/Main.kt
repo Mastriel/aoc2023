@@ -119,7 +119,6 @@ fun main(args: Array<String>) {
 
 
     Day8Part2("Day 8: Part 2: Test") {
-        enableDebug = true
         context = FileInput("day8_test2.txt")
         expectAnswer(6L)
     }
@@ -128,19 +127,70 @@ fun main(args: Array<String>) {
         expectAnswer(16187743689077L)
     }
 
+
     Day9("Day 9: Part 1: Test") {
         context = FileInput("day9_test.txt")
+        expectAnswer(114)
     }
 
     Day9("Day 9: Part 1") {
+        expectAnswer(2005352194)
     }
 
 
     Day9Part2("Day 9: Part 2: Test") {
+        expectAnswer(2)
         context = FileInput("day9_test.txt")
     }
 
     Day9Part2("Day 9: Part 2") {
+        expectAnswer(1077)
     }
 
+
+    Day10("Day 10: Part 1: Test") {
+        context = FileInput("day10_test.txt")
+        expectAnswer(8)
+    }
+
+    Day10("Day 10: Part 1") {
+        skip = true
+        expectAnswer(6831)
+    }
+
+
+    Day10Part2("Day 10: Part 2: Test") {
+        expectAnswer(10)
+        context = FileInput("day10_test2.txt")
+    }
+
+    Day10Part2("Day 10: Part 2: Test 2") {
+        context = FileInput("day10_test3.txt")
+        expectAnswer(4)
+    }
+
+    Day10Part2("Day 10: Part 2") {
+        expectAnswer(305)
+        enableDebug = true
+    }
+
+
+    Day11("Day 11: Part 1: Test") {
+        context = FileInput("day11_test.txt")
+    }
+
+    Day11("Day 11: Part 1") {
+        skip = true
+        expectAnswer(9742154)
+    }
+
+
+    Day11Part2("Day 11: Part 2: Test") {
+        context = FileInput("day11_test.txt")
+    }
+
+    Day11Part2("Day 11: Part 2") {
+        skip = true
+        expectAnswer(411142919886L)
+    }
 }
