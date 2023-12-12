@@ -2,7 +2,7 @@ package dev.calathea.aoc2023.days
 
 import dev.calathea.aoc2023.utils.*
 
-fun FileInput.fixGrid(amount: Int) : List<Pos2D> {
+private fun FileInput.fixGrid(amount: Int) : List<Pos2D> {
     val naiveGrid = TextGrid(input)
 
     val columnInserts = mutableListOf<Int>()
@@ -69,18 +69,6 @@ val Day11 = Challenge(FileInput("day11.txt")) {
     }
     debugPrintln(totalPairs)
     answer(total)
-}
-
-
-fun findBestPath(grid: Grid<Char>, pos1: Pos2D, pos2: Pos2D) : Int {
-    var pos = pos1
-    var total = 0
-    while (pos != pos2) {
-        pos = grid.getAdjacent(pos)
-            .values.minBy { it.distanceTo(pos2) }
-        total += 1
-    }
-    return total
 }
 
 

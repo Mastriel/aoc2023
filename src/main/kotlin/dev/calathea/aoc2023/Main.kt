@@ -172,6 +172,7 @@ fun main(args: Array<String>) {
     Day10Part2("Day 10: Part 2") {
         expectAnswer(305)
         enableDebug = true
+        skip = true
     }
 
 
@@ -192,5 +193,23 @@ fun main(args: Array<String>) {
     Day11Part2("Day 11: Part 2") {
         skip = true
         expectAnswer(411142919886L)
+    }
+
+    Day12("Day 12: Part 1: Test") {
+        context = FileInput("day12_test.txt")
+    }
+
+    Day12("Day 12: Part 1") {
+        skip = true
+        expectAnswer(7204)
+    }
+
+
+    Day12Part2("Day 12: Part 2: Test") {
+        context = FileInput("day12_test.txt")
+        enableDebug = true
+    }
+
+    Day12Part2("Day 12: Part 2") {
     }
 }

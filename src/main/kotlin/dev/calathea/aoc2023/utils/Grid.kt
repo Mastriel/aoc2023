@@ -23,6 +23,22 @@ data class Pos2D(val x: Int, val y: Int) {
     }
 
     fun toPos2DLong() = Pos2DLong(x.toLong(), y.toLong())
+
+    fun getAdjacent(withCorners: Boolean = false) : Map<AdjacentDirection, Pos2D> {
+        val map = mutableMapOf<AdjacentDirection, Pos2D>()
+
+        map[AdjacentDirection.Left] = AdjacentDirection.Left.offset(this)
+        map[AdjacentDirection.Right] = AdjacentDirection.Right.offset(this)
+        map[AdjacentDirection.Up] = AdjacentDirection.Up.offset(this)
+        map[AdjacentDirection.Down] = AdjacentDirection.Down.offset(this)
+        if (withCorners) {
+            map[AdjacentDirection.TopLeft] = AdjacentDirection.TopLeft.offset(this)
+            map[AdjacentDirection.TopRight] = AdjacentDirection.TopRight.offset(this)
+            map[AdjacentDirection.BottomLeft] = AdjacentDirection.BottomLeft.offset(this)
+            map[AdjacentDirection.BottomRight] = AdjacentDirection.BottomRight.offset(this)
+        }
+        return map
+    }
 }
 
 data class Pos2DLong(val x: Long, val y: Long) {
@@ -34,8 +50,32 @@ data class Pos2DLong(val x: Long, val y: Long) {
         return Pos2DLong(x + other.x, y + other.y)
     }
 
+    operator fun minus(other: Pos2D) : Pos2DLong {
+        return Pos2DLong(x - other.x, y - other.y)
+    }
+
+    operator fun plus(other: Pos2D) : Pos2DLong {
+        return Pos2DLong(x + other.x, y + other.y)
+    }
+
     fun manhattanDistanceTo(other: Pos2DLong) : Long {
         return abs(x - other.x) + abs(y - other.y)
+    }
+
+    fun getAdjacent(withCorners: Boolean = false) : Map<AdjacentDirection, Pos2DLong> {
+        val map = mutableMapOf<AdjacentDirection, Pos2DLong>()
+
+        map[AdjacentDirection.Left] = this + AdjacentDirection.Left.posOffset
+        map[AdjacentDirection.Right] = this + AdjacentDirection.Right.posOffset
+        map[AdjacentDirection.Up] = this + AdjacentDirection.Up.posOffset
+        map[AdjacentDirection.Down] = this + AdjacentDirection.Down.posOffset
+        if (withCorners) {
+            map[AdjacentDirection.TopLeft] = this + AdjacentDirection.Left.posOffset
+            map[AdjacentDirection.TopRight] = this + AdjacentDirection.Left.posOffset
+            map[AdjacentDirection.BottomLeft] = this + AdjacentDirection.Left.posOffset 
+            map[AdjacentDirection.BottomRight] = this + AdjacentDirection.Left.posOffset
+        }
+        return map
     }
 }
 
@@ -56,7 +96,7 @@ sealed class AdjacentDirection(val posOffset: Pos2D) {
 /**
  * [T] should be immutable, otherwise [clone] will mess up.
  */
-class Grid<T: Any>(var sizeX: Int, var sizeY: Int) : MutableMap<Pos2D, T> by mutableMapOf(), Cloneable {
+class Grid<T: Any>(var sizeX: Int = Int.MAX_VALUE, var sizeY: Int = Int.MAX_VALUE) : MutableMap<Pos2D, T> by mutableMapOf(), Cloneable {
 
     fun <N: Any> remap(transformer: (Pos2D, T) -> N) : Grid<N> {
         return Grid<N>(sizeX, sizeY).also {
@@ -75,28 +115,15 @@ class Grid<T: Any>(var sizeX: Int, var sizeY: Int) : MutableMap<Pos2D, T> by mut
     }
 
     fun forEachBookstyle(block: (Pos2D, T) -> Unit) {
-        repeat(sizeY) { y ->
-            repeat(sizeX) { x ->
-                val pos = Pos2D(x, y)
-                block(pos, get(pos)!!)
-            }
+        val positions = this.keys
+        val items = positions.sortedBy { it.y }.sortedBy { it.x }
+        for (pos in items) {
+            block(pos, get(pos)!!)
         }
     }
 
     fun getAdjacent(pos: Pos2D, withCorners: Boolean = false) : Map<AdjacentDirection, Pos2D> {
-        val map = mutableMapOf<AdjacentDirection, Pos2D>()
-
-        map[AdjacentDirection.Left] = AdjacentDirection.Left.offset(pos)
-        map[AdjacentDirection.Right] = AdjacentDirection.Right.offset(pos)
-        map[AdjacentDirection.Up] = AdjacentDirection.Up.offset(pos)
-        map[AdjacentDirection.Down] = AdjacentDirection.Down.offset(pos)
-        if (withCorners) {
-            map[AdjacentDirection.TopLeft] = AdjacentDirection.TopLeft.offset(pos)
-            map[AdjacentDirection.TopRight] = AdjacentDirection.TopRight.offset(pos)
-            map[AdjacentDirection.BottomLeft] = AdjacentDirection.BottomLeft.offset(pos)
-            map[AdjacentDirection.BottomRight] = AdjacentDirection.BottomRight.offset(pos)
-        }
-        return map
+        return pos.getAdjacent(withCorners)
     }
 }
 

@@ -4,7 +4,7 @@ import dev.calathea.aoc2023.utils.*
 import java.awt.Polygon
 import kotlin.math.ceil
 
-data class PipeTile(
+private data class PipeTile(
     val up: Boolean = false,
     val down: Boolean = false,
     val right: Boolean = false,
@@ -12,7 +12,7 @@ data class PipeTile(
 )
 
 
-val pipes = mapOf(
+private val pipes = mapOf(
     '|' to PipeTile(up = true, down = true),
     '-' to PipeTile(right = true, left = true),
     'L' to PipeTile(up = true, right = true),
@@ -53,7 +53,7 @@ val Day10 = Challenge(FileInput("day10.txt")) {
 }
 
 
-fun FileInput.scanPositions(map: MutableMap<Pos2D, Int>, grid: Grid<Char>, pos: Pos2D) {
+private fun FileInput.scanPositions(map: MutableMap<Pos2D, Int>, grid: Grid<Char>, pos: Pos2D) {
     val adjacent = grid.getAdjacent(pos)
     val thisChar = grid[pos]
 
@@ -159,17 +159,17 @@ val Day10Part2 = Challenge(FileInput("day10.txt")) {
     answer(debugList.size)
 }
 
-fun FileInput.tileIsEnclosed(grid: Grid<Char>, pos: Pos2D) : Boolean {
+private fun FileInput.tileIsEnclosed(grid: Grid<Char>, pos: Pos2D) : Boolean {
     if (grid[pos]!! != '.') return false
 
     val traversed = mutableSetOf<Pos2D>()
     traversed += pos
 
-    return recurse(1, traversed, grid, pos)
+    return solve(1, traversed, grid, pos)
 }
 
 
-fun FileInput.recurse(depth: Int, traversed: MutableSet<Pos2D>, grid: Grid<Char>, pos: Pos2D, isPartial: Boolean = false) : Boolean {
+private fun FileInput.solve(depth: Int, traversed: MutableSet<Pos2D>, grid: Grid<Char>, pos: Pos2D, isPartial: Boolean = false) : Boolean {
     if (depth > 10000) return true
     val adjacent = grid.getAdjacent(pos)
 
@@ -185,7 +185,7 @@ fun FileInput.recurse(depth: Int, traversed: MutableSet<Pos2D>, grid: Grid<Char>
             continue
         }
         traversed += adjacentPos
-        if (!recurse(depth+1, traversed, grid, adjacentPos)) {
+        if (!solve(depth+1, traversed, grid, adjacentPos)) {
             ret = false
         }
     }
