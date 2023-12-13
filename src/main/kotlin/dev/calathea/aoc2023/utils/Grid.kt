@@ -138,6 +138,22 @@ fun Grid<Char>.stringify() : String {
     }
 }
 
+fun Grid<Char>.columnToString(x: Int) : String {
+    return buildString {
+        repeat(sizeY) {
+            append(this@columnToString[Pos2D(x, it)] ?: "")
+        }
+    }
+}
+
+fun Grid<Char>.rowToString(y: Int) : String {
+    return buildString {
+        repeat(sizeX) {
+            append(this@rowToString[Pos2D(it, y)] ?: "")
+        }
+    }
+}
+
 fun TextGrid(input: String) : Grid<Char> {
     val lines = input.split("\r\n")
 

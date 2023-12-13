@@ -211,5 +211,28 @@ fun main(args: Array<String>) {
     }
 
     Day12Part2("Day 12: Part 2") {
+        skip = true
+        expectAnswer(1672318386674L)
+    }
+
+
+    Day13("Day 13: Part 1: Test") {
+        context = FileInput("day13_test.txt")
+        expectAnswer(405)
+    }
+
+    Day13("Day 13: Part 1") {
+        expectAnswer(30802)
+    }
+
+
+    Day13Part2("Day 13: Part 2: Test") {
+        context = FileInput("day13_test.txt")
+        expectAnswer(400)
+    }
+
+    Day13Part2("Day 13: Part 2") {
+        expectAnswer(37876)
+        skip = true
     }
 }
