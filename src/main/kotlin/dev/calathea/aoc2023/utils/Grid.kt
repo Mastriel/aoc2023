@@ -39,6 +39,15 @@ data class Pos2D(val x: Int, val y: Int) {
         }
         return map
     }
+
+    companion object {
+        val Up = Pos2D(0, -1)
+        val Down = Pos2D(0, 1)
+        val Right = Pos2D(1, 0)
+        val Left = Pos2D(-1, 0)
+
+        val Directions = listOf<Pos2D>(Up, Left, Down, Right)
+    }
 }
 
 data class Pos2DLong(val x: Long, val y: Long) {
@@ -125,6 +134,8 @@ class Grid<T: Any>(var sizeX: Int = Int.MAX_VALUE, var sizeY: Int = Int.MAX_VALU
     fun getAdjacent(pos: Pos2D, withCorners: Boolean = false) : Map<AdjacentDirection, Pos2D> {
         return pos.getAdjacent(withCorners)
     }
+
+
 }
 
 fun Grid<Char>.stringify() : String {

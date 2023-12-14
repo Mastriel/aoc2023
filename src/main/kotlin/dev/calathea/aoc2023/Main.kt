@@ -235,4 +235,30 @@ fun main(args: Array<String>) {
         expectAnswer(37876)
         skip = true
     }
+
+
+    Day14("Day 14: Part 1: Test") {
+        context = FileInput("day14_test.txt")
+        enableDebug = true
+        expectAnswer(136)
+    }
+
+    Day14("Day 14: Part 1") {
+        expectAnswer(113456)
+        skip = true
+    }
+
+
+    Day14Part2("Day 14: Part 2: Test") {
+        context = FileInput("day14_test.txt")
+        enableDebug = true
+        expectAnswer(64)
+
+    }
+
+    Day14Part2("Day 14: Part 2") {
+        enableDebug = true
+        expectAnswer(118747)
+        skip = true
+    }
 }
