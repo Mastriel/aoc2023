@@ -77,8 +77,6 @@ val Day14Part2 = Challenge(FileInput("day14.txt")) {
     var total = 0
     for (rock in grid.filter { it.value == 'O' }) {
         total += grid.sizeY - rock.key.y
-
-
     }
     answer(total)
 }

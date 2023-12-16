@@ -46,7 +46,7 @@ data class Pos2D(val x: Int, val y: Int) {
         val Right = Pos2D(1, 0)
         val Left = Pos2D(-1, 0)
 
-        val Directions = listOf<Pos2D>(Up, Left, Down, Right)
+        val Directions = listOf(Up, Left, Down, Right)
     }
 }
 
@@ -79,10 +79,10 @@ data class Pos2DLong(val x: Long, val y: Long) {
         map[AdjacentDirection.Up] = this + AdjacentDirection.Up.posOffset
         map[AdjacentDirection.Down] = this + AdjacentDirection.Down.posOffset
         if (withCorners) {
-            map[AdjacentDirection.TopLeft] = this + AdjacentDirection.Left.posOffset
-            map[AdjacentDirection.TopRight] = this + AdjacentDirection.Left.posOffset
-            map[AdjacentDirection.BottomLeft] = this + AdjacentDirection.Left.posOffset 
-            map[AdjacentDirection.BottomRight] = this + AdjacentDirection.Left.posOffset
+            map[AdjacentDirection.TopLeft] = this + AdjacentDirection.TopLeft.posOffset
+            map[AdjacentDirection.TopRight] = this + AdjacentDirection.TopRight.posOffset
+            map[AdjacentDirection.BottomLeft] = this + AdjacentDirection.BottomLeft.posOffset
+            map[AdjacentDirection.BottomRight] = this + AdjacentDirection.BottomRight.posOffset
         }
         return map
     }
@@ -135,6 +135,9 @@ class Grid<T: Any>(var sizeX: Int = Int.MAX_VALUE, var sizeY: Int = Int.MAX_VALU
         return pos.getAdjacent(withCorners)
     }
 
+    operator fun contains(pos: Pos2D) : Boolean {
+        return pos.x >= 0 && pos.y >= 0 && pos.x < sizeX && pos.y < sizeY
+    }
 
 }
 

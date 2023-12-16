@@ -261,4 +261,46 @@ fun main(args: Array<String>) {
         expectAnswer(118747)
         skip = true
     }
+
+    Day15("Day 15: Part 1: Test") {
+        context = FileInput("day15_test.txt")
+        expectAnswer(1320)
+    }
+
+    Day15("Day 15: Part 1") {
+        expectAnswer(512797)
+    }
+
+
+    Day15Part2("Day 15: Part 2: Test") {
+        context = FileInput("day15_test.txt")
+        expectAnswer(145)
+    }
+
+    Day15Part2("Day 15: Part 2") {
+        expectAnswer(262454)
+    }
+
+
+    Day16("Day 16: Part 1: Test") {
+        context = FileInput("day16_test.txt")
+        enableDebug = true
+        expectAnswer(46)
+    }
+
+    Day16("Day 16: Part 1") {
+        enableDebug = true
+        expectAnswer(6361)
+    }
+
+
+    Day16Part2("Day 16: Part 2: Test") {
+        context = FileInput("day16_test.txt")
+        enableDebug = true
+        expectAnswer(51)
+    }
+
+    Day16Part2("Day 16: Part 2") {
+        expectAnswer(6701)
+    }
 }
