@@ -171,7 +171,6 @@ fun main(args: Array<String>) {
 
     Day10Part2("Day 10: Part 2") {
         expectAnswer(305)
-        enableDebug = true
         skip = true
     }
 
@@ -207,7 +206,6 @@ fun main(args: Array<String>) {
 
     Day12Part2("Day 12: Part 2: Test") {
         context = FileInput("day12_test.txt")
-        enableDebug = true
     }
 
     Day12Part2("Day 12: Part 2") {
@@ -239,7 +237,6 @@ fun main(args: Array<String>) {
 
     Day14("Day 14: Part 1: Test") {
         context = FileInput("day14_test.txt")
-        enableDebug = true
         expectAnswer(136)
     }
 
@@ -251,13 +248,11 @@ fun main(args: Array<String>) {
 
     Day14Part2("Day 14: Part 2: Test") {
         context = FileInput("day14_test.txt")
-        enableDebug = true
         expectAnswer(64)
 
     }
 
     Day14Part2("Day 14: Part 2") {
-        enableDebug = true
         expectAnswer(118747)
         skip = true
     }
@@ -284,23 +279,84 @@ fun main(args: Array<String>) {
 
     Day16("Day 16: Part 1: Test") {
         context = FileInput("day16_test.txt")
-        enableDebug = true
         expectAnswer(46)
     }
 
     Day16("Day 16: Part 1") {
-        enableDebug = true
         expectAnswer(6361)
+        skip = true
     }
 
 
     Day16Part2("Day 16: Part 2: Test") {
         context = FileInput("day16_test.txt")
-        enableDebug = true
         expectAnswer(51)
     }
 
     Day16Part2("Day 16: Part 2") {
         expectAnswer(6701)
+        skip = true
+    }
+
+
+    Day17("Day 17: Part 1: Test") {
+        context = FileInput("day17_test.txt")
+        expectAnswer(102)
+    }
+
+    Day17("Day 17: Part 1") {
+        expectAnswer(1155)
+        skip = true
+    }
+
+
+    Day17Part2("Day 17: Part 2: Test") {
+        context = FileInput("day17_test.txt")
+        expectAnswer(94)
+    }
+
+    Day17Part2("Day 17: Part 2") {
+        expectAnswer(1283)
+        skip = true
+    }
+
+
+    Day18("Day 18: Part 1: Test") {
+        context = FileInput("day18_test.txt")
+        expectAnswer(62)
+    }
+
+    Day18("Day 18: Part 1") {
+        expectAnswer(49897)
+    }
+
+
+    Day18Part2("Day 18: Part 2: Test") {
+        context = FileInput("day18_test.txt")
+        expectAnswer(952408144115L)
+    }
+
+    Day18Part2("Day 18: Part 2") {
+        expectAnswer(194033958221830L)
+    }
+
+
+    Day19("Day 19: Part 1: Test") {
+        context = FileInput("day19_test.txt")
+        expectAnswer(19114)
+    }
+
+    Day19("Day 19: Part 1") {
+        expectAnswer(350678)
+    }
+
+
+    Day19Part2("Day 19: Part 2: Test") {
+        context = FileInput("day19_test.txt")
+        expectAnswer(167409079868000L)
+    }
+
+    Day19Part2("Day 19: Part 2") {
+        expectAnswer(124831893423809L)
     }
 }

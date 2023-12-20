@@ -1,6 +1,5 @@
 package dev.calathea.aoc2023.utils
 
-import com.sun.org.apache.xpath.internal.operations.Bool
 import java.awt.Point
 import kotlin.math.abs
 
@@ -12,6 +11,14 @@ data class Pos2D(val x: Int, val y: Int) {
 
     operator fun plus(other: Pos2D) : Pos2D {
         return Pos2D(x + other.x, y + other.y)
+    }
+
+    operator fun times(other: Pos2D) : Pos2D {
+        return Pos2D(x * other.x, y * other.y)
+    }
+
+    operator fun times(other: Int) : Pos2D {
+        return Pos2D(x * other, y * other)
     }
 
     fun distanceTo(other: Pos2D) : Double {
@@ -40,11 +47,14 @@ data class Pos2D(val x: Int, val y: Int) {
         return map
     }
 
+    fun mirror() : Pos2D = Pos2D(-x, -y)
+
     companion object {
         val Up = Pos2D(0, -1)
         val Down = Pos2D(0, 1)
         val Right = Pos2D(1, 0)
         val Left = Pos2D(-1, 0)
+        val Zero = Pos2D(0, 0)
 
         val Directions = listOf(Up, Left, Down, Right)
     }
@@ -89,10 +99,10 @@ data class Pos2DLong(val x: Long, val y: Long) {
 }
 
 sealed class AdjacentDirection(val posOffset: Pos2D) {
-    data object Left : AdjacentDirection(Pos2D(-1, 0))
-    data object Right : AdjacentDirection(Pos2D(1, 0))
-    data object Up : AdjacentDirection(Pos2D(0, -1))
-    data object Down : AdjacentDirection(Pos2D(0, 1))
+    data object Left : AdjacentDirection(Pos2D.Left)
+    data object Right : AdjacentDirection(Pos2D.Right)
+    data object Up : AdjacentDirection(Pos2D.Up)
+    data object Down : AdjacentDirection(Pos2D.Down)
 
     data object TopLeft : AdjacentDirection(Pos2D(-1, -1))
     data object TopRight : AdjacentDirection(Pos2D(1, -1))
@@ -112,6 +122,23 @@ class Grid<T: Any>(var sizeX: Int = Int.MAX_VALUE, var sizeY: Int = Int.MAX_VALU
             this.forEachBookstyle { pos2D, item ->
                 it[pos2D] = transformer(pos2D, item)
             }
+        }
+    }
+
+    fun fill(item: (Pos2D) -> T) {
+        this.forEachBookstyle { pos2D, _ ->
+            this[pos2D] = item(pos2D)
+        }
+    }
+
+    fun floodFill(pos: Pos2D, item: T, wallCondition: (Pos2D) -> Boolean) {
+        val adjacent = getAdjacentWithValues(pos).values
+
+        for (adjacentPieces in adjacent) {
+            if (wallCondition(adjacentPieces.first) || adjacentPieces.second == item) continue
+
+            this[adjacentPieces.first] = item
+            floodFill(adjacentPieces.first, item, wallCondition)
         }
     }
 
@@ -139,13 +166,29 @@ class Grid<T: Any>(var sizeX: Int = Int.MAX_VALUE, var sizeY: Int = Int.MAX_VALU
         return pos.x >= 0 && pos.y >= 0 && pos.x < sizeX && pos.y < sizeY
     }
 
+    fun getAdjacentWithValues(pos: Pos2D, withCorners: Boolean = false) : Map<AdjacentDirection, Pair<Pos2D, T?>> {
+        val map = mutableMapOf<AdjacentDirection, Pos2D>()
+
+        map[AdjacentDirection.Left] = AdjacentDirection.Left.offset(pos)
+        map[AdjacentDirection.Right] = AdjacentDirection.Right.offset(pos)
+        map[AdjacentDirection.Up] = AdjacentDirection.Up.offset(pos)
+        map[AdjacentDirection.Down] = AdjacentDirection.Down.offset(pos)
+        if (withCorners) {
+            map[AdjacentDirection.TopLeft] = AdjacentDirection.TopLeft.offset(pos)
+            map[AdjacentDirection.TopRight] = AdjacentDirection.TopRight.offset(pos)
+            map[AdjacentDirection.BottomLeft] = AdjacentDirection.BottomLeft.offset(pos)
+            map[AdjacentDirection.BottomRight] = AdjacentDirection.BottomRight.offset(pos)
+        }
+        return map.mapValues { it.value to this[it.value] }
+    }
+
 }
 
 fun Grid<Char>.stringify() : String {
     return buildString {
         repeat(sizeY) { y ->
             repeat(sizeX) { x ->
-                append(this@stringify[Pos2D(x, y)])
+                append(this@stringify[Pos2D(x, y)] ?: '?')
             }
             append("\n")
         }
