@@ -13,6 +13,9 @@ open class ChallengeContext {
     lateinit var challenge : Challenge<*>
         private set
 
+
+    var isDebug : Boolean = false
+
     fun injectChallenge(challenge: Challenge<*>) { this.challenge = challenge }
 
     fun answer(answer: Any) : Nothing {
@@ -103,6 +106,7 @@ data class Challenge<T: ChallengeContext>(private var context: T, private val in
         try {
             context.injectChallenge(this)
             context.validate()
+            if (enableDebug) context.isDebug = true
             invoke(context)
             val timePassed = timer.elapsedNow()
             System.err.println("Found no solution for '${name}' in $timePassed")
