@@ -10,7 +10,6 @@ sealed class Module {
     abstract val label: String
     abstract val destinations: List<String>
 
-
     data class Broadcast(override val label: String, override val destinations: List<String>) : Module()
 
     data class FlipFlop(
@@ -65,8 +64,8 @@ fun List<Module>.getDestinations(module: Module) = module.destinations.map {
     this.find { mod -> mod.label == it }
 }
 
-
 data class ConnectionState(val inputModule: Module, val pulseState: PulseState, val currentModule: Module)
+
 
 val Day20 = Challenge(FileInput("day20.txt")) {
     val modules = parseInput()

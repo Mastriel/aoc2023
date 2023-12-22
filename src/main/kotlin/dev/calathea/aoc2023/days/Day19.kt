@@ -18,7 +18,6 @@ sealed class Rule {
         abstract val value: Int
         abstract fun truthyRange(): IntRange
         abstract fun falsyRange(): IntRange
-
     }
 
     data class MoreThan(override val criteria: Criteria, override val value: Int, override val output: Output) :

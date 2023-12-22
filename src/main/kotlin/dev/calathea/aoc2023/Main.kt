@@ -368,12 +368,38 @@ fun main(args: Array<String>) {
 
     Day20("Day 20: Part 1: Test 2") {
         context = FileInput("day20_test2.txt")
-        enableDebug = true
+        expectAnswer(11687500)
     }
 
     Day20("Day 20: Part 1") {
+        skip = true
+        expectAnswer(731517480)
     }
 
     Day20Part2("Day 20: Part 2") {
+        skip = true
+        expectAnswer(244178746156661L)
+    }
+
+
+    Day21("Day 21: Part 1: Test") {
+        context = FileInput("day21_test.txt")
+        expectAnswer(16)
+    }
+
+    Day21("Day 21: Part 1") {
+        expectAnswer(3651)
+        skip = true
+    }
+
+    Day21Part2("Day 21: Part 2: Test") {
+        context = FileInput("day21_test.txt")
+        skip = true
+        // no expect answer, it's not given
+    }
+
+    Day21Part2("Day 21: Part 2") {
+        expectAnswer(607334325965751L)
+        skip = true
     }
 }

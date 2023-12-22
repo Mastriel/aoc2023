@@ -17,8 +17,20 @@ data class Pos2D(val x: Int, val y: Int) {
         return Pos2D(x * other.x, y * other.y)
     }
 
+    operator fun div(other: Pos2D) : Pos2D {
+        return Pos2D(x / other.x, y / other.y)
+    }
+
     operator fun times(other: Int) : Pos2D {
         return Pos2D(x * other, y * other)
+    }
+
+    operator fun rem(other: Pos2D) : Pos2D {
+        return Pos2D(x % other.x, y % other.y)
+    }
+
+    fun abs() : Pos2D {
+        return Pos2D(abs(x), abs(y))
     }
 
     fun distanceTo(other: Pos2D) : Double {
@@ -31,13 +43,15 @@ data class Pos2D(val x: Int, val y: Int) {
 
     fun toPos2DLong() = Pos2DLong(x.toLong(), y.toLong())
 
-    fun getAdjacent(withCorners: Boolean = false) : Map<AdjacentDirection, Pos2D> {
+    fun getAdjacent(withDirect: Boolean = true, withCorners: Boolean = false) : Map<AdjacentDirection, Pos2D> {
         val map = mutableMapOf<AdjacentDirection, Pos2D>()
 
-        map[AdjacentDirection.Left] = AdjacentDirection.Left.offset(this)
-        map[AdjacentDirection.Right] = AdjacentDirection.Right.offset(this)
-        map[AdjacentDirection.Up] = AdjacentDirection.Up.offset(this)
-        map[AdjacentDirection.Down] = AdjacentDirection.Down.offset(this)
+        if (withDirect) {
+            map[AdjacentDirection.Left] = AdjacentDirection.Left.offset(this)
+            map[AdjacentDirection.Right] = AdjacentDirection.Right.offset(this)
+            map[AdjacentDirection.Up] = AdjacentDirection.Up.offset(this)
+            map[AdjacentDirection.Down] = AdjacentDirection.Down.offset(this)
+        }
         if (withCorners) {
             map[AdjacentDirection.TopLeft] = AdjacentDirection.TopLeft.offset(this)
             map[AdjacentDirection.TopRight] = AdjacentDirection.TopRight.offset(this)
@@ -165,6 +179,8 @@ class Grid<T: Any>(var sizeX: Int = Int.MAX_VALUE, var sizeY: Int = Int.MAX_VALU
     operator fun contains(pos: Pos2D) : Boolean {
         return pos.x >= 0 && pos.y >= 0 && pos.x < sizeX && pos.y < sizeY
     }
+
+    val lastPosition get() = Pos2D(sizeX-1, sizeY-1)
 
     fun getAdjacentWithValues(pos: Pos2D, withCorners: Boolean = false) : Map<AdjacentDirection, Pair<Pos2D, T?>> {
         val map = mutableMapOf<AdjacentDirection, Pos2D>()
