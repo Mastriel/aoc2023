@@ -41,7 +41,7 @@ data class Pos2D(val x: Int, val y: Int) {
         return abs(x - other.x) + abs(y - other.y)
     }
 
-    fun toPos2DLong() = Pos2DLong(x.toLong(), y.toLong())
+    fun toPos2DLong() = Pos2DL(x.toLong(), y.toLong())
 
     fun getAdjacent(withDirect: Boolean = true, withCorners: Boolean = false) : Map<AdjacentDirection, Pos2D> {
         val map = mutableMapOf<AdjacentDirection, Pos2D>()
@@ -74,29 +74,29 @@ data class Pos2D(val x: Int, val y: Int) {
     }
 }
 
-data class Pos2DLong(val x: Long, val y: Long) {
-    operator fun minus(other: Pos2DLong) : Pos2DLong {
-        return Pos2DLong(x - other.x, y - other.y)
+data class Pos2DL(val x: Long, val y: Long) {
+    operator fun minus(other: Pos2DL) : Pos2DL {
+        return Pos2DL(x - other.x, y - other.y)
     }
 
-    operator fun plus(other: Pos2DLong) : Pos2DLong {
-        return Pos2DLong(x + other.x, y + other.y)
+    operator fun plus(other: Pos2DL) : Pos2DL {
+        return Pos2DL(x + other.x, y + other.y)
     }
 
-    operator fun minus(other: Pos2D) : Pos2DLong {
-        return Pos2DLong(x - other.x, y - other.y)
+    operator fun minus(other: Pos2D) : Pos2DL {
+        return Pos2DL(x - other.x, y - other.y)
     }
 
-    operator fun plus(other: Pos2D) : Pos2DLong {
-        return Pos2DLong(x + other.x, y + other.y)
+    operator fun plus(other: Pos2D) : Pos2DL {
+        return Pos2DL(x + other.x, y + other.y)
     }
 
-    fun manhattanDistanceTo(other: Pos2DLong) : Long {
+    fun manhattanDistanceTo(other: Pos2DL) : Long {
         return abs(x - other.x) + abs(y - other.y)
     }
 
-    fun getAdjacent(withCorners: Boolean = false) : Map<AdjacentDirection, Pos2DLong> {
-        val map = mutableMapOf<AdjacentDirection, Pos2DLong>()
+    fun getAdjacent(withCorners: Boolean = false) : Map<AdjacentDirection, Pos2DL> {
+        val map = mutableMapOf<AdjacentDirection, Pos2DL>()
 
         map[AdjacentDirection.Left] = this + AdjacentDirection.Left.posOffset
         map[AdjacentDirection.Right] = this + AdjacentDirection.Right.posOffset

@@ -75,7 +75,7 @@ val Day11 = Challenge(FileInput("day11.txt")) {
 val Day11Part2 = Challenge(FileInput("day11.txt")) {
     val galaxies = fixGrid(999_999).map { it.toPos2DLong() }
 
-    val alreadyDone = mutableListOf<Pair<Pos2DLong, Pos2DLong>>()
+    val alreadyDone = mutableListOf<Pair<Pos2DL, Pos2DL>>()
 
     var total = 0L
     var totalPairs = 0

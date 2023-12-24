@@ -1,15 +1,15 @@
 package dev.calathea.aoc2023.days
 
 
-data class Conversion(val destinationRangeStart: Long, val sourceRangeStart: Long, val rangeLength: Long) {
+private data class Conversion(val destinationRangeStart: Long, val sourceRangeStart: Long, val rangeLength: Long) {
 
 
 }
 
-data class MappingKey(val source: String, val destination: String)
+private data class MappingKey(val source: String, val destination: String)
 
 
-fun List<Conversion>.sourceToDestination(source: Long) : Long {
+private fun List<Conversion>.sourceToDestination(source: Long) : Long {
     val list = this
 
     val conversion = list.find { source in it.sourceRangeStart..<it.sourceRangeStart+it.rangeLength } ?: return source

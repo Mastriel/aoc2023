@@ -2,7 +2,7 @@ package dev.calathea.aoc2023.days
 
 import dev.calathea.aoc2023.utils.Grid
 import dev.calathea.aoc2023.utils.Pos2D
-import dev.calathea.aoc2023.utils.Pos2DLong
+import dev.calathea.aoc2023.utils.Pos2DL
 import kotlin.math.abs
 
 private data class MoveInstruction(val move: Pos2D, val color: String)
@@ -68,7 +68,7 @@ private fun FileInput.getInstructionsPart2(lines: List<String>) : List<MoveInstr
     return instructions
 }
 
-fun shoelaceArea(list: List<Pos2DLong>): Long {
+private fun shoelaceArea(list: List<Pos2DL>): Long {
     val listSize = list.size
     var acc = 0L
     for (i in 0..<listSize - 1) {
@@ -83,7 +83,7 @@ val Day18Part2 = Challenge(FileInput("day18.txt")) {
 
     val instructions = getInstructionsPart2(lines)
 
-    val gridEntries = mutableListOf<Pos2DLong>()
+    val gridEntries = mutableListOf<Pos2DL>()
 
     var current = Pos2D.Zero.toPos2DLong()
     gridEntries += Pos2D.Zero.toPos2DLong()

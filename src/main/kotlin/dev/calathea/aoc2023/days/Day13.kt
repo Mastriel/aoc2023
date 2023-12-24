@@ -2,7 +2,7 @@ package dev.calathea.aoc2023.days
 
 import dev.calathea.aoc2023.utils.*
 
-sealed interface Reflection {
+private sealed interface Reflection {
 
     fun questionValue() : Int
 

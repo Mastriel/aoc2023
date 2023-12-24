@@ -15,7 +15,7 @@ val Day17 = Challenge(FileInput("day17.txt")) {
 
 // partially taken from https://github.com/nothingelsematters/contests/blob/master/advent-of-code/2023/src/Day17.kt
 // i do not know what a dijkstra is.
-fun FileInput.minPath(grid: Grid<Int>, minRun: Int, maxRun: Int, initialDirection: Pos2D): Int {
+private fun FileInput.minPath(grid: Grid<Int>, minRun: Int, maxRun: Int, initialDirection: Pos2D): Int {
     val endPos = Pos2D(grid.sizeX - 1, grid.sizeY - 1)
 
     val queue = PriorityQueue<Pair<State, Int>>(compareBy { it.second })

@@ -3,13 +3,13 @@ package dev.calathea.aoc2023.days
 import dev.calathea.aoc2023.utils.combinedWith
 import dev.calathea.aoc2023.utils.size
 
-sealed interface Output {
+private sealed interface Output {
     data class OtherWorkflow(val workflowLabel: String) : Output
     data object Accept : Output
     data object Reject : Output
 }
 
-sealed class Rule {
+private sealed class Rule {
 
     abstract val output: Output
 
@@ -35,14 +35,14 @@ sealed class Rule {
     data class GoTo(override val output: Output) : Rule()
 }
 
-enum class Criteria { X, M, A, S }
-data class Thing(val criterion: MutableMap<Criteria, Int>) {
+private enum class Criteria { X, M, A, S }
+private data class Thing(val criterion: MutableMap<Criteria, Int>) {
     val totalXmas: Int
         get() =
             criterion.values.reduce { acc, it -> acc + it }
 }
 
-data class QuantumThing(
+private data class QuantumThing(
     private var x: IntRange,
     private var m: IntRange,
     private var a: IntRange,

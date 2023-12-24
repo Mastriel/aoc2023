@@ -5,7 +5,7 @@ import dev.calathea.aoc2023.utils.Pos2D
 import dev.calathea.aoc2023.utils.TextGrid
 import dev.calathea.aoc2023.utils.stringify
 
-fun FileInput.tiltGrid(grid: Grid<Char>, direction: Pos2D = Pos2D.Up) {
+private fun FileInput.tiltGrid(grid: Grid<Char>, direction: Pos2D = Pos2D.Up) {
     while (true) {
         var somethingHappened = false
         grid.forEachBookstyle { pos2D, c ->
@@ -24,7 +24,7 @@ fun FileInput.tiltGrid(grid: Grid<Char>, direction: Pos2D = Pos2D.Up) {
     }
 }
 
-fun FileInput.spinGrid(grid: Grid<Char>) : Grid<Char> {
+private fun FileInput.spinGrid(grid: Grid<Char>) : Grid<Char> {
     val positions = mutableListOf<Grid<Char>>()
 
     for (i in 0..1_000_000_000) {

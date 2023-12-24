@@ -20,7 +20,7 @@ private fun Grid<Char>.getWrapped(pos: Pos2D): Char {
     return this[((stupidSolution + pos) % (lastPosition + Pos2D(1,1))).abs()]!!
 }
 
-fun totalOf(grid: Grid<Char>, amount: Int, getter: Grid<Char>.(Pos2D) -> Char?) : Int {
+private fun totalOf(grid: Grid<Char>, amount: Int, getter: Grid<Char>.(Pos2D) -> Char?) : Int {
 
     val remaining = mutableSetOf<Pos2D>()
 

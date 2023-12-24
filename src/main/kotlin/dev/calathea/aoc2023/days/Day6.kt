@@ -1,7 +1,7 @@
 package dev.calathea.aoc2023.days
 
-data class Race(val distance: Int, val time: Int)
-data class RaceLong(val distance: Long, val time: Long)
+private data class Race(val distance: Int, val time: Int)
+private data class RaceLong(val distance: Long, val time: Long)
 
 val Day6 = Challenge(FileInput("day6.txt")) {
     val lines = input.split("\r\n")

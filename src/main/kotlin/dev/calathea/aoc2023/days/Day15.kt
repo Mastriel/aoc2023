@@ -1,6 +1,6 @@
 package dev.calathea.aoc2023.days
 
-fun hash(string: String) : Int {
+private fun hash(string: String) : Int {
     var value = 0
     for (char in string) {
         value += char.code
@@ -20,7 +20,7 @@ val Day15 = Challenge(FileInput("day15.txt")) {
     answer(total)
 }
 
-sealed class Instruction() {
+private sealed class Instruction() {
     abstract val label: String
 
     data class Remove(override val label: String) : Instruction()
@@ -28,7 +28,7 @@ sealed class Instruction() {
     data class Set(override val label: String, val focalLength: Int) : Instruction()
 }
 
-fun parseInstructions(input: List<String>) : List<Instruction> {
+private fun parseInstructions(input: List<String>) : List<Instruction> {
     val instructions = mutableListOf<Instruction>()
     for (raw in input) {
         if (raw.contains("=")) {
@@ -43,9 +43,9 @@ fun parseInstructions(input: List<String>) : List<Instruction> {
     return instructions
 }
 
-data class Lens(var label: String, var focalLength: Int)
+private data class Lens(var label: String, var focalLength: Int)
 
-class Box {
+private class Box {
     val list = mutableListOf<Lens>()
 
     fun has(label: String) = list.any { it.label == label }

@@ -4,12 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="Day 20">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day21.kt" afterDir="false" />
+    <list default="true" id="eeb14151-0422-45bc-8b83-3e67b7b2f86d" name="Changes" comment="Day 21">
+      <change afterPath="$PROJECT_DIR$/Day24Part2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day22.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day23.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day24.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/utils/3D.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day11.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day13.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day13.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day14.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day14.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day15.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day15.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day16.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day16.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day17.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day17.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day18.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day18.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day19.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day19.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day20.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day20.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day21.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day21.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day5.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day6.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day6.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day7.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day7.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day8.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/days/Day8.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/utils/Grid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023/utils/Grid.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +56,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -98,6 +114,7 @@
       <recent name="C:\Users\Zacza\IdeaProjects\aoc2023\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zacza\IdeaProjects\aoc2023" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/dev/calathea/aoc2023" />
     </key>
   </component>
@@ -167,7 +184,7 @@
       <workItem from="1702870725747" duration="7564000" />
       <workItem from="1702960698690" duration="39171000" />
       <workItem from="1703132103263" duration="8327000" />
-      <workItem from="1703216133942" duration="1787000" />
+      <workItem from="1703216133942" duration="24424000" />
     </task>
     <task id="LOCAL-00001" summary="Make challenges as pretty as possible">
       <option name="closed" value="true" />
@@ -297,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703095705632</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Day 21">
+      <option name="closed" value="true" />
+      <created>1703217974663</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1703217974663</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +346,7 @@
     <MESSAGE value="Day 15 + 16" />
     <MESSAGE value="Day 17, 18, and 19" />
     <MESSAGE value="Day 20" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 20" />
+    <MESSAGE value="Day 21" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 21" />
   </component>
 </project>

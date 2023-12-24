@@ -3,9 +3,9 @@ package dev.calathea.aoc2023.days
 import dev.calathea.aoc2023.utils.lcm
 
 
-enum class PulseState { Low, High }
+private enum class PulseState { Low, High }
 
-sealed class Module {
+private sealed class Module {
 
     abstract val label: String
     abstract val destinations: List<String>
@@ -30,7 +30,7 @@ sealed class Module {
     ) : Module()
 }
 
-fun FileInput.parseInput(): List<Module> {
+private fun FileInput.parseInput(): List<Module> {
     val lines = input.split("\r\n")
         .map { it.split(" -> ") }
 
@@ -60,11 +60,11 @@ fun FileInput.parseInput(): List<Module> {
     return modules
 }
 
-fun List<Module>.getDestinations(module: Module) = module.destinations.map {
+private fun List<Module>.getDestinations(module: Module) = module.destinations.map {
     this.find { mod -> mod.label == it }
 }
 
-data class ConnectionState(val inputModule: Module, val pulseState: PulseState, val currentModule: Module)
+private data class ConnectionState(val inputModule: Module, val pulseState: PulseState, val currentModule: Module)
 
 
 val Day20 = Challenge(FileInput("day20.txt")) {

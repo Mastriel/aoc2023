@@ -16,7 +16,7 @@ val Day16 = Challenge(FileInput("day16.txt")) {
     answer(lit)
 }
 
-fun Grid<Char>.calculateLit(startingPos: Pos2D, startingDir: Pos2D) : Int {
+private fun Grid<Char>.calculateLit(startingPos: Pos2D, startingDir: Pos2D) : Int {
     val nextPositions = mutableSetOf(startingPos to startingDir)
 
     val totalPositions = mutableSetOf<Pair<Pos2D, Pos2D>>()

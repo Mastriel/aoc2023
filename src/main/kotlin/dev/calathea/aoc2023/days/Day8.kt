@@ -2,7 +2,7 @@ package dev.calathea.aoc2023.days
 
 import dev.calathea.aoc2023.utils.lcm
 
-data class Node(val key: String, val left: String, val right: String)
+private data class Node(val key: String, val left: String, val right: String)
 
 
 val Day8 = Challenge(FileInput("day8.txt")) {

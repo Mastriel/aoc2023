@@ -402,4 +402,62 @@ fun main(args: Array<String>) {
         expectAnswer(607334325965751L)
         skip = true
     }
+
+    Day22("Day 22: Part 1: Test") {
+        context = FileInput("day22_test.txt")
+        skip = true
+    }
+
+    Day22("Day 22: Part 1") {
+        skip = true
+
+    }
+
+    Day22Part2("Day 22: Part 2: Test") {
+        context = FileInput("day22_test.txt")
+        skip = true
+    }
+
+    Day22Part2("Day 22: Part 2") {
+        skip = true
+    }
+
+
+    Day23("Day 23: Part 1: Test") {
+        context = FileInput("day23_test.txt")
+        enableDebug = true
+        skip = true
+    }
+
+    Day23("Day 23: Part 1") {
+        skip = true
+    }
+
+
+    Day23Part2("Day 23: Part 2: Test") {
+        context = FileInput("day23_test.txt")
+        enableDebug = true
+    }
+
+    Day23Part2("Day 23: Part 2") {
+        skip = true
+    }
+
+
+    Day24("Day 24: Part 1: Test") {
+        context = FileInput("day24_test.txt")
+        enableDebug = true
+    }
+
+    Day24("Day 24: Part 1") {
+    }
+
+
+    Day24Part2("Day 24: Part 2: Test") {
+        context = FileInput("day24_test.txt")
+        enableDebug = true
+    }
+
+    Day24Part2("Day 24: Part 2") {
+    }
 }
