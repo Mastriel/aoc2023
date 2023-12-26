@@ -4,7 +4,7 @@ import dev.calathea.aoc2023.days.*
 import kotlin.math.exp
 
 fun main(args: Array<String>) {
-    println("Hello World!")
+    println("Change all of the configurations for each challenge in Main.kt!")
 
     Day1("Day 1: Part 1") {
         expectAnswer(57346)
@@ -446,7 +446,6 @@ fun main(args: Array<String>) {
 
     Day24("Day 24: Part 1: Test") {
         context = FileInput("day24_test.txt")
-        enableDebug = true
     }
 
     Day24("Day 24: Part 1") {
@@ -455,9 +454,11 @@ fun main(args: Array<String>) {
 
     Day24Part2("Day 24: Part 2: Test") {
         context = FileInput("day24_test.txt")
-        enableDebug = true
     }
 
     Day24Part2("Day 24: Part 2") {
+    }
+
+    Day25("Day 25: Part 1") {
     }
 }
